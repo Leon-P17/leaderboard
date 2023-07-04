@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}?v=1">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="{{ url_for('main') }}">
+            <img class="logo-image" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </a>
+    </div>
+    <h1>Control Panel</h1>
+    <h2>Add a Driver</h2>
+    <div class="blank-space"></div>
+    <form id="add-driver-form" action="/add_driver" method="post">
+        <label for="name">Driver Name:</label>
+        <input type="text" id="name" name="name"  placeholder="John Doe" style="color: #000" required>
+        
+        <label for="lap_time">Lap Time:</label>
+        <input type="text" id="lap_time" name="lap_time" placeholder="1:23:456" required>
+        
+        <button class="btn-add-driver" type="submit">Add Driver</button>
+    </form>
+
+    <h2>Other Controls</h2>
+
+    <!-- Upload Excel file button-->
+    <form id="upload-drivers-form" action="{{ url_for('upload_drivers_route') }}" method="post" enctype="multipart/form-data">
+        <input id="excel-file-input" type="file" name="file" accept=".xlsx" style="display: none;">
+        <button class="btn-upload-excel" type="button" onclick="selectExcelFile()">Upload Excel File</button>
+      </form>      
+
+    <!-- Clear leaderboard button -->
+    <form id="clear-leaderboard-form" action="/clear_leaderboard" method="post">
+        <button class="btn-clear-leaderboard" type="button" onclick="confirmClearLeaderboard()">Clear Leaderboard</button>
+    </form>
+
+    <!-- Stop Program Button -->
+    <form action="{{ url_for('stop_program') }}" method="POST" onclick="shutdownServer()">
+        <button class="button stop" type="submit">Stop Application</button>
+    </form>
+
+    <div class="footer">
+        <div class="footer-line"></div>
+        <div class="footer-right">
+            <p class="footer-text">Simulator Leaderboard Web App V1.1</p>
+            <p class="footer-text">© Leon Penn</p>
+        </div>
+    </div>
+
+    <script>
+        function confirmClearLeaderboard() {
+            if (confirm("Press OK to clear the leaderboard. Press Cancel to cancel.")) {
+                clearLeaderboard();
+            }
+        }
+        
+        function clearLeaderboard() {
+            fetch("{{ url_for('clear_leaderboard_route') }}", {
+                method: "POST"
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.confirm) {
+                    alert("Leaderboard cleared successfully.");
+                }
+            })
+            .catch(error => {
+                console.error("Error clearing leaderboard:", error);
+            });
+        }
+
+        function shutdownServer() {
+            alert("You can close this tab now")
+        }
+
+        function selectExcelFile() {
+            const fileInput = document.getElementById('excel-file-input');
+            fileInput.click();
+        }
+
+        const fileInput = document.getElementById('excel-file-input');
+        fileInput.addEventListener('change', function() {
+            const form = document.getElementById('upload-drivers-form');
+            form.submit();
+        });
+    </script>
+</body>
+</html>

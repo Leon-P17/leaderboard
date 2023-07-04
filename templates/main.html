@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}?v=1">
+    <style>
+        .rounded-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="{{ url_for('main') }}">
+            <img class="logo-image" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </a>
+    </div>
+    <div class="main-container">
+        <h1>Welcome to the Leaderboard Web App</h1>
+        <div class="buttons-container">
+            <a class="rounded-button" href="{{ url_for('leaderboard') }}"
+               onmouseover="this.style.transform = 'scale(1.1)'" onmouseout="this.style.transform = 'scale(1)'">
+                Go to Leaderboard
+            </a>
+            <a class="rounded-button" href="{{ url_for('control_panel') }}"
+               onmouseover="this.style.transform = 'scale(1.1)'" onmouseout="this.style.transform = 'scale(1)'">
+                Go to Control Panel
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-line"></div>
+        <div class="footer-right">
+            <p class="footer-text">Simulator Leaderboard Web App V1.1</p>
+            <p class="footer-text">© Leon Penn</p>
+        </div>
+    </div>
+</body>
+</html>

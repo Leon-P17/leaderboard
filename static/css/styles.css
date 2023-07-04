@@ -1,0 +1,249 @@
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.logo-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.rounded-button {
+  display: inline-block;
+  padding: 20px;
+  margin: 0 10px;
+  max-width: 350px;
+  max-height: 350px;
+  background-color: #27A8E0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.rounded-button:hover {
+  background-color: #1980ac;
+}
+
+.rounded-button:active {
+  background-color: #1980ac;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
+}
+
+h1 {
+  text-align: center;
+  font-family: Ethnocentric, sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3) {
+  font-size: 19px;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+tr:nth-child(even) {
+  background-color: #222;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.footer-line {
+  border: none;
+  height: 1px;
+  background-color: white;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 20px 0;
+  color: white;
+}
+
+.footer-left {
+  float: left;
+}
+
+.footer-right {
+  float: right;
+}
+
+.footer-link {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-text {
+  color: white;
+  font-size: 14px;
+  text-align: right;
+}
+
+.main-container {
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+.btn-add-driver {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.btn-add-driver:hover {
+  background-color: #45a049;
+}
+
+.btn-clear-leaderboard {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.btn-clear-leaderboard:hover {
+  background-color: #c82333;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 37px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button.stop {
+  background-color: #dc3545;
+}
+
+.button.stop:hover {
+  background-color: #c82333;
+}
+
+input#name::-webkit-input-placeholder,
+input#name::-moz-placeholder,
+input#name::-ms-input-placeholder,
+input#name::placeholder {
+  color: rgba(0, 0, 0, 0.3) !important; /* Adjust the color as needed */
+}
+
+.btn-upload-excel {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

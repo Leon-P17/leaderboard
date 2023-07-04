@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}?v=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="{{ url_for('main') }}">
+            <img class="logo-image" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </a>
+    </div>
+    <script src="main.js"></script>
+    <div class="main-container">
+        <h1>Track of the Month Leaderboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Driver</th>
+                    <th>Lap Time</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                {% for driver in leaderboard %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ driver['name'] }}</td>
+                    <td>{{ driver['lap_time'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <div class="footer-line"></div>
+        <div class="footer-right">
+            <p class="footer-text">Simulator Leaderboard Web App V1.1</p>
+            <p class="footer-text">© Leon Penn</p>
+        </div>
+    </div>
+</body>
+</html>
